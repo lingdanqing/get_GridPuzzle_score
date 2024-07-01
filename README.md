@@ -1,4 +1,4 @@
-# get_GridPuzzle_score
+# img_GridPuzzle_score
 ### 使用边缘差异化算法，识别3x3九宫格拼图或者4x4十六宫格拼图
 通过图像识别的方式，从多张乱序的拼图中找到拼图顺序正确的图片。
 
