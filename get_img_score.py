@@ -1,9 +1,14 @@
 
 ## by lingdanqing
+# https://github.com/lingdanqing
+
 from PIL import Image
 import numpy as np
 import os
 import cv2
+
+# 定义图片分割宫格数 [3,3] 表示3x3九宫格; [4,4] 表示4x4十六宫格
+img_puzzle_nums = [4,4]
 
 # 去除白边的函数
 def remove_white_borders(image):
@@ -65,8 +70,8 @@ def process_images_in_folder(folder_path):
         image = Image.open(image_path)
 
         image_np = np.array(image)
-        tiles = split_image(image_np, 4, 4, 'out', image_file.split('.')[0])
-        edge_diff = calculate_edge_difference(tiles, 4, 4)
+        tiles = split_image(image_np, img_puzzle_nums[0], img_puzzle_nums[1], 'out', image_file.split('.')[0])
+        edge_diff = calculate_edge_difference(tiles, img_puzzle_nums[0], img_puzzle_nums[1])
         edge_diffs.append((image_file, edge_diff))
     
     # 找出边缘差异最小的图片
@@ -77,6 +82,6 @@ def process_images_in_folder(folder_path):
 
 
 # 指定图片文件夹路径
-# folder_path = './temp'
-# correct_image = process_images_in_folder(folder_path)
-# print(f"The correct image is {correct_image}")
+folder_path = './temp'
+correct_image = process_images_in_folder(folder_path)
+print(f"The correct image is {correct_image}")
