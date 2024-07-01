@@ -7,7 +7,7 @@
 ```python
 img_puzzle_nums = [4,4]
 ```
-- 识别的图片放在同级的temp文件夹目录下，correct_image为返回差异化最小图片的标题
+- 识别的图片放在同级的temp文件夹目录下，correct_image为返回差异化最小图片的标题序号
 
 - 调用方法
 ```python
@@ -17,4 +17,4 @@ correct_image = process_images_in_folder(folder_path)
 print(f"The correct image is {correct_image}")
 
 ```
-- [author by lbyingdanqing](https://github.com/lbyingdanqing)
+- [author by lingdanqing](https://github.com/lingdanqing)
